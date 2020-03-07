@@ -19,43 +19,80 @@
 
 @implementation XXGrid
 
-- (instancetype)initWithLayer:(id)layer {
-    if (self = [super initWithLayer:layer]) {
+#pragma mark - Life Cycle
+- (instancetype)init {
+    if (self = [super init]) {
         _blocks = [NSMutableArray arrayWithCapacity:kBlockCount];
+        
+        self.borderWidth = 2.f;
+        
+        [self initLayer];
     }
     
     return self;
+}
+
+- (void)layoutSublayers {
+    [super layoutSublayers];
+    
+    [self setupLayer];
+}
+
+
+#pragma mark - Layer
+- (void)initLayer {
+    for (int i = 0; i < kBlockCount; ++i) {
+        XXBlock *block = [[XXBlock alloc] init];
+        block.index = i;
+        
+        [self.blocks addObject:block];
+    }
 }
 
 - (void)setupLayer {
     CGFloat width = self.frame.size.width / 3;
     CGFloat height = self.frame.size.height / 3;
     
-    for (int i = 0; i < kBlockCount; ++i) {
-        XXBlock *block = [[XXBlock alloc] init];
-        block.frame = CGRectMake(ceil(i / 3) * width, i % 3 * height, width, height);
-        block.index = i;
+    for (int i = 0; i < self.blocks.count; ++i) {
+        NSInteger r = ceil(i / 3);
+        NSInteger c = i % 3;
         
-        [self.blocks addObject:block];
+        XXBlock *block = self.blocks[i];
+        block.frame = CGRectMake(r * width, c * height, width, height);
+        
         [self addSublayer:block];
     }
-    
 }
 
-- (void)setFrame:(CGRect)frame {
-    [super setFrame:frame];
+
+#pragma mark - Data
+- (void)loadData:(NSArray<NSArray *> *)data {
+    for (int i = 0; i < data.count; ++i) {
+        XXBlock *block = self.blocks[i];
+        NSArray *blockValues = data[i];
+        
+        [block loadData:blockValues];
+    }
 }
 
-- (void)drawInContext:(CGContextRef)ctx {
-    
-}
 
-- (void)layoutSublayers {
-    //self.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), (CGFloat[]){174.0/255.0, 174.0/255.0, 174.0/255.0});
-    self.borderWidth = 2.f;
-    
-    [self setupLayer];
-}
+#pragma mark - Event Response
+
+
+#pragma mark - Public Methods
+
+
+#pragma mark - Private Methods
+
+
+#pragma mark - Delegate
+
+
+#pragma mark - Setter
+
+
+#pragma mark - Getter
+
 
 
 @end

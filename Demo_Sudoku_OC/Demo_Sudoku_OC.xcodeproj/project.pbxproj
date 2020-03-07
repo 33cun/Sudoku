@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A576F5FF2413EC85002AEEB5 /* XXSudokuService.m in Sources */ = {isa = PBXBuildFile; fileRef = A576F5FE2413EC85002AEEB5 /* XXSudokuService.m */; };
 		A5A1B5D92412A3CB000E60D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1B5D82412A3CB000E60D9 /* AppDelegate.m */; };
 		A5A1B5DC2412A3CB000E60D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1B5DB2412A3CB000E60D9 /* SceneDelegate.m */; };
 		A5A1B5DF2412A3CB000E60D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1B5DE2412A3CB000E60D9 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A576F5FD2413EC85002AEEB5 /* XXSudokuService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXSudokuService.h; sourceTree = "<group>"; };
+		A576F5FE2413EC85002AEEB5 /* XXSudokuService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXSudokuService.m; sourceTree = "<group>"; };
 		A5A1B5D42412A3CB000E60D9 /* Demo_Sudoku_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Sudoku_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A1B5D72412A3CB000E60D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5A1B5D82412A3CB000E60D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,8 +92,6 @@
 		A5A1B5F12412A76A000E60D9 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				A5A1B5DD2412A3CB000E60D9 /* ViewController.h */,
-				A5A1B5DE2412A3CB000E60D9 /* ViewController.m */,
 				A5A1B5E02412A3CB000E60D9 /* Main.storyboard */,
 				A5A1B5E32412A3CC000E60D9 /* Assets.xcassets */,
 				A5A1B5E52412A3CC000E60D9 /* LaunchScreen.storyboard */,
@@ -138,6 +139,10 @@
 		A5A1B5FC2412ACAC000E60D9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A5A1B5DD2412A3CB000E60D9 /* ViewController.h */,
+				A5A1B5DE2412A3CB000E60D9 /* ViewController.m */,
+				A576F5FD2413EC85002AEEB5 /* XXSudokuService.h */,
+				A576F5FE2413EC85002AEEB5 /* XXSudokuService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A576F5FF2413EC85002AEEB5 /* XXSudokuService.m in Sources */,
 				A5A1B5DF2412A3CB000E60D9 /* ViewController.m in Sources */,
 				A5A1B6072412B1DD000E60D9 /* XXLattice.m in Sources */,
 				A5A1B6032412B034000E60D9 /* XXBlock.m in Sources */,
@@ -367,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 388VKLBARN;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Demo_Sudoku_OC/Classes/Main/PrefixHeader.pch";
 				INFOPLIST_FILE = Demo_Sudoku_OC/Classes/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 388VKLBARN;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Demo_Sudoku_OC/Classes/Main/PrefixHeader.pch";
 				INFOPLIST_FILE = Demo_Sudoku_OC/Classes/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

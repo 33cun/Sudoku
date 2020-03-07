@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XXGrid : CALayer
 
+- (void)loadData:(NSArray<NSArray *> *)data;
+
 @end
 
 NS_ASSUME_NONNULL_END

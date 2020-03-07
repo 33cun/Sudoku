@@ -1,20 +1,18 @@
 //
-//  XXBlock.h
+//  XXSudokuService.h
 //  Demo_Sudoku_OC
 //
 //  Created by 肖鑫 on 2020/3/7.
 //  Copyright © 2020 Eleven. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XXBlock : CALayer
+@interface XXSudokuService : NSObject
 
-@property (nonatomic, assign) NSUInteger index;
-
-- (void)loadData:(NSArray *)data;
++ (NSArray<NSArray *> *)getInitialGrid;
 
 @end
 

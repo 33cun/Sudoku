@@ -8,26 +8,81 @@
 
 #import "XXLattice.h"
 
+@interface XXLattice ()
+
+@property (nonatomic, strong) CATextLayer *label;
+
+@end
+
 @implementation XXLattice
 
+#pragma mark - Life Cycle
 - (instancetype)init {
     if (self = [super init]) {
+        self.borderWidth = .25f;
         
+        [self initLayer];
     }
     
     return self;
 }
 
-- (void)setupLayer {
+- (void)layoutSublayers {
+    [super layoutSublayers];
+    
+    self.label.frame = self.bounds;
+}
+
+
+#pragma mark - Layer
+- (void)initLayer {
+    [self addSublayer:self.label];
+}
+
+
+#pragma mark - Data
+- (void)setupData {
     
 }
 
 
-- (void)layoutSublayers {
-    self.backgroundColor = RandomCGColor;
-    self.borderWidth = .25f;
+#pragma mark - Event Response
+
+
+#pragma mark - Public Methods
+
+
+#pragma mark - Private Methods
+
+
+#pragma mark - Delegate
+
+
+#pragma mark - Setter
+- (void)setValue:(NSUInteger)value {
+    _value = value;
     
-    [self setupLayer];
+    if (self.isInitial) {
+        self.label.string = [NSString stringWithFormat:@"%lu", (unsigned long)value];
+    } else {
+        if (0 == value) return;
+        
+        self.label.foregroundColor = [UIColor redColor].CGColor;
+    }
+}
+
+
+#pragma mark - Getter
+- (CATextLayer *)label {
+    if (!_label) {
+        _label = [[CATextLayer alloc] init];
+        _label.fontSize = 34.f; //  -.-
+        _label.foregroundColor = [UIColor blackColor].CGColor;
+        _label.alignmentMode = kCAAlignmentCenter;
+        _label.contentsScale = [UIScreen mainScreen].scale;
+    }
+    
+    return _label;
 }
 
 

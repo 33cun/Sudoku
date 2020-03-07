@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSUInteger index;
 
+@property (nonatomic, assign) NSUInteger value;
+
+@property (nonatomic, assign, getter=isInitial) BOOL initial;
+
 @end
 
 NS_ASSUME_NONNULL_END
